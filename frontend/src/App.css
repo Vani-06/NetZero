@@ -1,49 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&display=swap');
+
+/* --- COLOR PALETTE --- 
+   Background Beige: #F4EEDC
+   Card Beige: #FEFBF3
+   Extremely Dark Green: #0A1F13
+   Border/Progress Base: #E1D8C1
+*/
 
 body {
-  background-color: #FDFBF7; /* Soft earthy beige */
+  background-color: #F4EEDC; 
   font-family: 'Nunito', sans-serif;
-  color: #2D4A22; /* Deep forest green */
+  color: #0A1F13; 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 }
 
+/* --- MAIN CONTAINERS --- */
 .game-container {
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(45, 74, 34, 0.1);
+  background-color: #FEFBF3;
+  border-radius: 40px; /* Ultra rounded cute container */
+  padding: 40px 30px;
+  box-shadow: 0 20px 40px rgba(10, 31, 19, 0.08);
   text-align: center;
-  max-width: 400px;
+  max-width: 380px;
   width: 100%;
-  border: 4px solid #E8E5D9; /* Darker beige border */
+  border: 4px solid #FEFBF3;
 }
 
-.header h1 {
-  color: #4A7C59; /* Medium green */
+.cute-card {
+  background-color: #F4EEDC;
+  border-radius: 30px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: inset 0 4px 10px rgba(255,255,255,0.5), 0 4px 15px rgba(10, 31, 19, 0.05);
+}
+
+/* --- TYPOGRAPHY --- */
+.icon-header {
+  font-size: 50px;
+  margin-bottom: -10px;
+}
+
+.title {
+  color: #0A1F13;
+  font-size: 2.2rem;
+  font-weight: 800;
   margin-bottom: 5px;
 }
 
-.stats-board {
-  background-color: #F0F4EC; /* Very light green */
-  border-radius: 15px;
-  padding: 20px;
-  margin: 20px 0;
+.subtitle {
+  color: #4A6352;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 
-.tree-display {
-  font-size: 80px; 
-  margin: 10px 0;
-  /* Adds a cute floating animation to the plant */
-  animation: float 3s ease-in-out infinite; 
+.greeting {
+  font-size: 1.1rem;
+  color: #4A6352;
 }
 
-.credits {
-  font-size: 1.2rem;
-  color: #4A7C59;
+.highlight-name {
+  color: #0A1F13;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.level-text {
+  color: #0A1F13;
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+/* --- INPUTS & FORMS --- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cute-input {
+  width: 85%;
+  padding: 18px 20px;
+  border: 3px solid #E1D8C1;
+  border-radius: 20px; /* Pill shape inputs */
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  color: #0A1F13;
+  background-color: #FEFBF3;
+  outline: none;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.cute-input::placeholder {
+  color: #A3AFA8;
+  font-weight: 500;
+}
+
+.cute-input:focus {
+  border-color: #0A1F13;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(10, 31, 19, 0.1);
+}
+
+/* --- BUTTONS --- */
+.primary-btn {
+  background-color: #0A1F13;
+  color: #FEFBF3;
+  border: none;
+  padding: 18px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(10, 31, 19, 0.2);
+}
+
+.cute-btn {
+  background-color: #0A1F13;
+  color: #FEFBF3;
+  border: none;
+  padding: 18px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
 .action-buttons {
@@ -52,25 +141,60 @@ body {
   gap: 12px;
 }
 
-button {
-  background-color: #88D49E; /* Cute leaf green */
-  color: #1A3015;
-  border: none;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+/* Cute bouncy hover effect for all buttons */
+.bounce-hover {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s;
 }
 
-button:hover {
-  background-color: #6BBF84;
-  transform: scale(1.02);
+.bounce-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  background-color: #173824; /* Slightly lighter dark green */
+}
+
+.bounce-hover:active {
+  transform: translateY(2px);
+}
+
+/* --- VISUAL ELEMENTS --- */
+.tree-display {
+  font-size: 90px; 
+  margin: 10px 0;
+  animation: float 3s ease-in-out infinite; 
+}
+
+.tutorial-icon {
+  font-size: 60px;
+}
+
+/* --- PROGRESS BAR --- */
+.progress-container {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  background-color: #E1D8C1; 
+  height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid #F4EEDC;
+}
+
+.progress-fill {
+  background-color: #0A1F13; 
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.progress-text {
+  font-size: 0.95rem;
+  color: #0A1F13;
+  margin-top: 12px;
+  font-weight: 800;
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
